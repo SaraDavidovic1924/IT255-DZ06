@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+            <script>
+            $(document).ready(function(){
+            $.ajax({
+            url: 'http://jsonplaceholder.typicode.com/albums/2',
+            type: "GET",
+            success: function(html){
+            var obj = html;
+            $("#userId").append("userId: " + obj.userId);
+            $("#id").append("id: " + obj.id);
+            $("#title").append("title: " + obj.title);
+
+            }
+            });
+        });
+        </script>
+    </head>
+    <body>
+	<p style="color:blue; border-style: double;">JQuery HTML aplikacija preuzima i ispisuje podatke sa <a href="http://jsonplaceholder.typicode.com/albums">linka</a> javnog web</p>
+        <div id="userId"></div>
+        <div id="id"></div>
+        <div id="title"></div>
+     
+    </body>
+</html>
